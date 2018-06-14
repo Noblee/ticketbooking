@@ -1,0 +1,18 @@
+allprojects {
+    apply plugin: 'idea'
+
+    group 'me.nobler.spring.eureka_server'
+    group 'me.nobler.spring.ticketbooking'
+    group 'me.nobler.spring.bank_server'
+    group 'me.nobler.spring.air_server'
+
+
+
+}
+subprojects {
+
+    repositories {
+        mavenCentral()
+    }
+}
+

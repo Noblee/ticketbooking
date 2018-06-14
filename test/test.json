@@ -1,0 +1,52 @@
+[
+  {
+    "host": "10.41.253.102",
+    "port": 8080,
+    "uri": "http://10.41.253.102:8080",
+    "metadata": {
+      "management.port": "8080",
+      "jmx.port": "60827"
+    },
+    "secure": false,
+    "instanceInfo": {
+      "instanceId": "10.41.253.102:abcdcd",
+      "app": "SADASD",
+      "appGroupName": null,
+      "ipAddr": "10.41.253.102",
+      "sid": "na",
+      "homePageUrl": "http://10.41.253.102:8080/",
+      "statusPageUrl": "http://10.41.253.102:8080/actuator/info",
+      "healthCheckUrl": "http://10.41.253.102:8080/actuator/health",
+      "secureHealthCheckUrl": null,
+      "vipAddress": "abcdcd",
+      "secureVipAddress": "abcdcd",
+      "countryId": 1,
+      "dataCenterInfo": {
+        "@class": "com.netflix.appinfo.InstanceInfo$DefaultDataCenterInfo",
+        "name": "MyOwn"
+      },
+      "hostName": "10.41.253.102",
+      "status": "UP",
+      "leaseInfo": {
+        "renewalIntervalInSecs": 30,
+        "durationInSecs": 90,
+        "registrationTimestamp": 1528378737540,
+        "lastRenewalTimestamp": 1528378886571,
+        "evictionTimestamp": 0,
+        "serviceUpTimestamp": 1528378736650
+      },
+      "isCoordinatingDiscoveryServer": false,
+      "metadata": {
+        "management.port": "8080",
+        "jmx.port": "60827"
+      },
+      "lastUpdatedTimestamp": 1528378737540,
+      "lastDirtyTimestamp": 1528378736541,
+      "actionType": "ADDED",
+      "asgName": null,
+      "overriddenStatus": "UNKNOWN"
+    },
+    "serviceId": "SADASD",
+    "scheme": null
+  }
+]

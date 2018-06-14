@@ -1,0 +1,210 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Track Material Design Bootstrap Admin Template</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="assets/materialize/css/materialize.min.css" media="screen,projection"/>
+    <!-- Bootstrap Styles-->
+    <link href="assets/css/bootstrap.css" rel="stylesheet"/>
+    <!-- FontAwesome Styles-->
+    <link href="assets/css/font-awesome.css" rel="stylesheet"/>
+    <!-- Morris Chart Styles-->
+    <link href="assets/js/morris/morris-0.4.3.min.css" rel="stylesheet"/>
+    <!-- Custom Styles-->
+    <link href="assets/css/custom-styles.css" rel="stylesheet"/>
+    <!-- Google Fonts-->
+    <link rel="stylesheet" href="assets/js/Lightweight-Chart/cssCharts.css">
+    <link rel="stylesheet" href="mycss.css">
+
+
+</head>
+<body>
+<div id="wrapper">
+    <nav class="navbar navbar-default top-navbar" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand waves-effect waves-dark" href="index.html"><i class="large material-icons">track_changes</i>
+                <strong  id="myname">target</strong></a>
+
+            <div id="sideNav" href=""><i class="material-icons dp48">toc</i></div>
+        </div>
+
+        <ul class="nav navbar-top-links navbar-right">
+            <li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown1"><i
+                    class="fa fa-user fa-fw"></i> <b>我</b> <i
+                    class="material-icons right">arrow_drop_down</i></a></li>
+        </ul>
+    </nav>
+    <!-- Dropdown Structure -->
+    <ul id="dropdown1" class="dropdown-content">
+        <li><a href="/quit"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+        </li>
+    </ul>
+    <!--/. NAV TOP  -->
+    <nav class="navbar-default navbar-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav" id="main-menu">
+                <li>
+                    <a href="main.html" class="active-menu waves-effect waves-dark"><i class="fa fa-table"></i>
+                        航班管理</a>
+                </li>
+                <li>
+                    <a href="trans.html" class="active-menu waves-effect waves-dark"><i class="fa fa-table"></i>
+                        订单查询</a>
+                </li>
+                <li>
+                    <a href="addbank.html" class="active-menu waves-effect waves-dark"><i class="fa fa-table"></i>
+                        添加支持银行</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- /. NAV SIDE  -->
+    <div id="page-wrapper">
+        <div id="page-inner">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Advanced Tables -->
+                    <div class="card">
+                        <!--<div class="card-action">-->
+                        <!--Advanced Tables-->
+                        <!--</div>-->
+                        <div class="card-content">
+
+
+                            <div class="table-responsive">
+                                <table class="table-striped table-bordered table-hover" id="datatable">
+                                    <thead>
+                                    <tr>
+                                        <th>航班编号</th>
+                                        <th>日期</th>
+                                        <th>出发地</th>
+                                        <th>到达地</th>
+                                        <th>出发时间</th>
+                                        <th>到达时间</th>
+                                        <th>价钱</th>
+                                        <th>余量</th>
+                                        <th></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td style="vertical-align: center;"></td>
+                                        <td style="vertical-align: center;"></td>
+                                        <td style="vertical-align: center;"></td>
+                                        <td style="vertical-align: center;"></td>
+                                        <td style="vertical-align: center;"></td>
+                                        <td style="vertical-align: center;"></td>
+                                        <td style="vertical-align: center;"></td>
+                                        <td style="vertical-align: center;"></td>
+                                        <td class="center" style="width: 30px;padding: 0px 0px 0px 0px;vertical-align: inherit;">
+                                            <button data-toggle="dropdown" class="btn btn-warning dropdown-toggle">删除航班</button>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <table class="table">
+                            <tr>
+                                <td><input placeholder="航班编号" id="航班编号" type="text"></td>
+                                <td><input placeholder="日期" id="日期" type="date"></td>
+                                <td><input placeholder="出发时间" id="出发时间" type="text" value="10:00:00"></td>
+                                <td><input placeholder="到达时间" id="到达时间" type="text" value="20:00:00"></td>
+
+                                <td><input placeholder="出发地" id="出发地" type="text"></td>
+                                <td><input placeholder="到达地" id="到达地" type="text"></td>
+                                <td><input placeholder="价钱" id="价钱" type="number"></td>
+                                <td><input placeholder="余量" id="余量" type="number"></td>
+                                <td>
+                                    <button data-toggle="dropdown" id="insert" class="btn btn-primary dropdown-toggle">
+                                        添加
+                                    </button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <!--End Advanced Tables -->
+                </div>
+            </div>
+            <script src="assets/js/jquery-1.10.2.js"></script>
+
+
+            <!-- jQuery Js -->
+
+            <!-- Bootstrap Js -->
+            <script src="assets/js/bootstrap.min.js"></script>
+
+            <script src="assets/materialize/js/materialize.min.js"></script>
+
+            <!-- Metis Menu Js -->
+            <script src="assets/js/jquery.metisMenu.js"></script>
+            <!-- Morris Chart Js -->
+            <script src="assets/js/morris/raphael-2.1.0.min.js"></script>
+            <script src="assets/js/morris/morris.js"></script>
+
+
+            <script src="assets/js/easypiechart.js"></script>
+            <script src="assets/js/easypiechart-data.js"></script>
+
+            <script src="assets/js/Lightweight-Chart/jquery.chart.js"></script>
+            <!-- DATA TABLE SCRIPTS -->
+            <script src="assets/js/dataTables/jquery.dataTables.js"></script>
+            <script src="assets/js/dataTables/dataTables.bootstrap.js"></script>
+
+
+            <!-- Custom Js -->
+            <script src="assets/js/custom-scripts.js"></script>
+            <!--<script src="layer.js"></script>-->
+
+
+            <script src="main.js"></script>
+
+            <script>
+                rest_main_table_data();
+
+                $("#insert").click(function () {
+                        console.log("asdasd");
+                        $.get('/admin/addFlight?id=' + $("#航班编号").val() +
+                            '&day=' + $("#日期").val() +
+                            '&departure=' + $("#出发地").val() +
+                            '&destination=' + $("#到达地").val() +
+                            '&arrival=' + $("#出发时间").val() +
+                            '&go_off=' + $("#到达时间").val() +
+                            '&prize=' + $("#价钱").val() +
+                            '&remaining=' + $("#余量").val()
+                            , function () {
+                                rest_main_table_data();
+                            })
+                    }
+                );
+
+                //console.log("asdasd");
+                var table2 = $('#datatable').dataTable();
+                // $('#datatable tbody').on('click', 'tr', function () {
+                //     if ($(this).hasClass('selected')) {
+                //         $(this).removeClass('selected');
+                //     }
+                //     else {
+                //         table2.$('tr.selected').removeClass('selected');
+                //         $(this).addClass('selected');
+                //     }
+                // });
+                $(document).ready(function () {
+                    table2 = $('#datatable').dataTable();
+                });
+
+
+            </script>
+</body>
+
+</html>

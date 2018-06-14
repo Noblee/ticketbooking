@@ -1,0 +1,83 @@
+bankname: BankOfChina
+spring:
+  profiles: bank_server1
+  application:
+    name: BankOfChina
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://qqmysql:3306/${spring.profiles}?useSSL=false&useUnicode=true&characterEncoding=utf8
+    password: Didiren82325
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  session:
+    store-type: redis
+  redis:
+    host: qq.nobler.me
+    port: 6379
+    password: Didiren82325
+    database: 0
+server:
+  port: 20200
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:30301/eureka,http://peer2:30302/eureka
+---
+bankname: ICBC
+spring:
+  profiles: bank_server2
+  application:
+    name: ICBC
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://qqmysql:3306/${spring.profiles}?useSSL=false&useUnicode=true&characterEncoding=utf8
+    password: Didiren82325
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  session:
+    store-type: redis
+  redis:
+    host: qq.nobler.me
+    port: 6379
+    password: Didiren82325
+    database: 1
+server:
+  port: 20202
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:30301/eureka,http://peer2:30302/eureka
+---
+bankname: ICBC
+spring:
+  profiles: bank_server3
+  application:
+    name: ICBC
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://qqmysql:3306/bank_server2?useSSL=false&useUnicode=true&characterEncoding=utf8
+    password: Didiren82325
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  session:
+    store-type: redis
+  redis:
+    host: qq.nobler.me
+    port: 6379
+    password: Didiren82325
+    database: 1
+server:
+  port: 20203
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:30301/eureka,http://peer2:30302/eureka

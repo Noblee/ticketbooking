@@ -1,0 +1,191 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Track Material Design Bootstrap Admin Template</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="assets/materialize/css/materialize.min.css" media="screen,projection"/>
+    <!-- Bootstrap Styles-->
+    <link href="assets/css/bootstrap.css" rel="stylesheet"/>
+    <!-- FontAwesome Styles-->
+    <link href="assets/css/font-awesome.css" rel="stylesheet"/>
+    <!-- Morris Chart Styles-->
+    <link href="assets/js/morris/morris-0.4.3.min.css" rel="stylesheet"/>
+    <!-- Custom Styles-->
+    <link href="assets/css/custom-styles.css" rel="stylesheet"/>
+    <!-- Google Fonts-->
+    <link rel="stylesheet" href="assets/js/Lightweight-Chart/cssCharts.css">
+    <link rel="stylesheet" href="theme/default/layer.css">
+
+    <link rel="stylesheet" href="mycss.css">
+
+
+</head>
+<body>
+<div id="wrapper">
+    <nav class="navbar navbar-default top-navbar" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand waves-effect waves-dark" href="index.html"><i class="large material-icons">track_changes</i>
+                <strong>订票系统</strong></a>
+
+            <div id="sideNav" href=""><i class="material-icons dp48">toc</i></div>
+        </div>
+
+        <ul class="nav navbar-top-links navbar-right">
+            <li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown1"><i
+                    class="fa fa-user fa-fw"></i> <b>我</b> <i
+                    class="material-icons right">arrow_drop_down</i></a></li>
+        </ul>
+    </nav>
+    <!-- Dropdown Structure -->
+    <ul id="dropdown1" class="dropdown-content">
+        <li><a href="/quit"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+        </li>
+    </ul>
+    <!--/. NAV TOP  -->
+    <nav class="navbar-default navbar-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav" id="main-menu">
+                <li>
+                    <a href="main.html" class="active-menu waves-effect waves-dark"><i class="fa fa-table"></i>
+                        查询航班</a>
+                </li>
+                <li>
+                    <a href="trans.html" class="active-menu waves-effect waves-dark"><i class="fa fa-table"></i>
+                        我的订单</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- /. NAV SIDE  -->
+    <div id="page-wrapper">
+        <div id="page-inner">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Advanced Tables -->
+                    <div class="card">
+                        <!--<div class="card-action">-->
+                        <!--Advanced Tables-->
+                        <!--</div>-->
+                        <div class="card-content">
+
+
+                            <div class="table-responsive">
+                                <table class="table-striped table-bordered table-hover" id="datatable">
+                                    <thead>
+                                    <tr>
+                                        <th>航班提供商</th>
+                                        <th>航班编号</th>
+                                        <th>出发日期</th>
+                                        <th>出发地</th>
+                                        <th>到达地</th>
+                                        <th>出发时间</th>
+                                        <th>到达时间</th>
+                                        <th>价钱</th>
+                                        <th>余量</th>
+                                        <th></th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td style="vertical-align: center;"></td>
+                                        <td style="vertical-align: center;"></td>
+                                        <td style="vertical-align: center;"></td>
+                                        <td style="vertical-align: center;"></td>
+                                        <td style="vertical-align: center;"></td>
+                                        <td style="vertical-align: center;"></td>
+                                        <td style="vertical-align: center;"></td>
+                                        <td style="vertical-align: center;"></td>
+                                        <td style="vertical-align: center;"></td>
+                                        <td style="vertical-align: center;"></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <table border="0">
+                                <tbody>
+                                <tr>
+                                    <td width="70px">起始日期:</td>
+                                    <td style="padding-right: 10px"><input style="vertical-align: bottom;width: 130px;"
+                                                                           height="10px" type="date" id="begin"
+                                                                           name="begin"></td>
+                                    <td width="70px">结束日期:</td>
+                                    <td style="padding-right: 10px"><input style="vertical-align: bottom;width: 130px;"
+                                                                           height="10px" type="date" id="end"
+                                                                           name="end" ></td>
+
+                                    <td width="70px">价格区间:</td>
+                                    <td style="padding-right: 20px"><input style="vertical-align: bottom" type="number"
+                                                                           id="min"
+                                                                           name="min"></td>
+                                    <td width="10px" style="padding-right: 20px">～</td>
+                                    <td style="padding-right: 20px"><input type="number" id="max" name="max"></td>
+
+                                    <td width="70px">航空公司:</td>
+                                    <td style="padding-right: 20px"><input type="text" id="company" name="company"></td>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                    <!--End Advanced Tables -->
+                </div>
+            </div>
+            <script src="assets/js/jquery-1.10.2.js"></script>
+
+
+            <!-- jQuery Js -->
+
+            <!-- Bootstrap Js -->
+            <script src="assets/js/bootstrap.min.js"></script>
+
+            <script src="assets/materialize/js/materialize.min.js"></script>
+
+            <!-- Metis Menu Js -->
+            <script src="assets/js/jquery.metisMenu.js"></script>
+            <!-- Morris Chart Js -->
+            <script src="assets/js/morris/raphael-2.1.0.min.js"></script>
+            <script src="assets/js/morris/morris.js"></script>
+
+
+            <script src="assets/js/easypiechart.js"></script>
+            <script src="assets/js/easypiechart-data.js"></script>
+
+            <script src="assets/js/Lightweight-Chart/jquery.chart.js"></script>
+            <!-- DATA TABLE SCRIPTS -->
+            <script src="assets/js/dataTables/jquery.dataTables.js"></script>
+            <script src="assets/js/dataTables/dataTables.bootstrap.js"></script>
+
+
+            <!-- Custom Js -->
+            <script src="assets/js/custom-scripts.js"></script>
+            <!--<script src="layer.js"></script>-->
+
+
+            <script src="main.js"></script>
+            <script src="layer.js"></script>
+
+
+            <script>
+                rest_main_table_data();
+                var table2 = $('#datatable').DataTable();
+                $('#min, #max,#begin,#end,#company').change(function () {
+                    table2.draw();
+                });
+                $(document).ready(function () {
+                    table2 = $('#datatable').dataTable();
+                });
+            </script>
+</body>
+
+</html>

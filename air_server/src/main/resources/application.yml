@@ -1,0 +1,62 @@
+airlinename: 美国航空
+spring:
+  profiles: air_server1
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://123.206.181.159:3306/air_server1?useSSL=false&useUnicode=true&characterEncoding=utf8
+    password: Didiren82325
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  application:
+    name: American-Airlines
+server:
+  port: 8081
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:30301/eureka,http://peer2:30302/eureka
+---
+airlinename: 中国航空
+spring:
+  profiles: air_server2
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://qqmysql:3306/air_server2?useSSL=false&useUnicode=true&characterEncoding=utf8
+    password: Didiren82325
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  application:
+    name: Airchina
+server:
+  port: 8082
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:30301/eureka,http://peer2:30302/eureka
+---
+airlinename: 中国航空
+spring:
+  profiles: air_server3
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://qqmysql:3306/air_server2?useSSL=false&useUnicode=true&characterEncoding=utf8
+    password: Didiren82325
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  application:
+    name: Airchina
+server:
+  port: 8083
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:30301/eureka,http://peer2:30302/eureka

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="//res.layui.com/layui/src/css/layui.css" media="all">
+    <link rel="stylesheet" href="//res.layui.com/static/css/global.css" media="all">
+    <link rel="stylesheet" href="//res.layui.com/static/css/independents.css" media="all">
+
+    <script src="//res.layui.com/layui/release/layer/dist/layer.js?v=3111"></script>
+    <script src="assets/js/jquery-1.10.2.js"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="assets/materialize/css/materialize.min.css" media="screen,projection"/>
+    <!-- Bootstrap Styles-->
+    <link href="assets/css/bootstrap.css" rel="stylesheet"/>
+    <!-- FontAwesome Styles-->
+    <link href="assets/css/font-awesome.css" rel="stylesheet"/>
+    <!-- Morris Chart Styles-->
+    <link href="assets/js/morris/morris-0.4.3.min.css" rel="stylesheet"/>
+    <!-- Custom Styles-->
+    <link href="assets/css/custom-styles.css" rel="stylesheet"/>
+    <!-- Google Fonts-->
+    <link rel="stylesheet" href="assets/js/Lightweight-Chart/cssCharts.css">
+    <link rel="stylesheet" href="theme/default/layer.css">
+
+    <link rel="stylesheet" href="mycss.css">
+    <!-- jQuery Js -->
+
+    <!-- Bootstrap Js -->
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <script src="assets/materialize/js/materialize.min.js"></script>
+
+    <!-- Metis Menu Js -->
+    <script src="assets/js/jquery.metisMenu.js"></script>
+    <!-- Morris Chart Js -->
+    <script src="assets/js/morris/raphael-2.1.0.min.js"></script>
+    <script src="assets/js/morris/morris.js"></script>
+
+
+    <script src="assets/js/easypiechart.js"></script>
+    <script src="assets/js/easypiechart-data.js"></script>
+
+    <script src="assets/js/Lightweight-Chart/jquery.chart.js"></script>
+    <!-- DATA TABLE SCRIPTS -->
+    <script src="assets/js/dataTables/jquery.dataTables.js"></script>
+    <script src="assets/js/dataTables/dataTables.bootstrap.js"></script>
+
+
+    <!-- Custom Js -->
+    <script src="assets/js/custom-scripts.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+
+
+<div class="row">
+            <div class="col-md-12">
+                <!-- Advanced Tables -->
+                <div class="card">
+                    <!--<div class="card-action">-->
+                    <!--Advanced Tables-->
+                    <!--</div>-->
+                    <div class="card-content">
+
+
+                        <div class="table-responsive">
+
+                            <table class="table-striped table-bordered table-hover" style="font-size: x-large"
+                                   id="datatable">
+                                <thead>
+                                <tr>
+                                    <th style="font-size: medium">请选择下列支持的银行,输入账号密码即可付款。</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+
+
+                                <tr>
+                                    <td style=" vertical-align: center;"></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <table class="table">
+                                <tr>
+                                    <td><input placeholder="银行账号" id="银行账号" type="text"></td>
+                                    <td><input placeholder="银行密码" id="银行密码" type="password"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <button data-toggle="dropdown" id="pay" class="btn btn-primary dropdown-toggle">
+                                            付款
+                                        </button>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!--End Advanced Tables -->
+            </div>
+        </div>
+
+<script>
+    var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+    console.log(parent.$('#pagedata').attr("flightProvider"));
+    var table2;
+    table2 = $('#datatable').dataTable({
+        searching: false,
+        ordering:  false,
+        paging:false
+    });
+    // $.extend( $.fn.dataTable.defaults, {
+    //
+    // } );
+    $('#datatable tbody').on('click', 'td', function () {
+        if ($(this).hasClass('selected')) {
+            $(this).removeClass('selected');
+        }
+        else {
+            table2.$('td.selected').removeClass('selected');
+            $(this).addClass('selected');
+        }
+    });
+    // $(document).ready(function () {
+    //
+    // });
+
+    $('#datatable').dataTable().fnClearTable();
+    $.getJSON('./getsupportbank?flightProvider=' + parent.$('#pagedata').attr("flightProvider"), function (json) {
+        for (var i = 0; i < json.length; i++) {
+            var t = $('#datatable').DataTable();
+            t.row.add([
+                json[i]
+            ]).draw();
+        }
+    });
+
+    $("#pay").click(function () {
+            $.get('/payorder?orderId=' +parent.$('#pagedata').attr("flightoid") +
+                '&flightProvider=' + parent.$('#pagedata').attr("flightProvider")+
+                '&username=' + $('#银行账号').val()+
+                '&password=' + $('#银行密码').val()+
+                '&bankName=' + table2.$('td.selected').text()
+                , function () {
+                    parent.location.reload();
+                    parent.layer.close(index);
+                })
+        }
+    );
+
+</script>
+</body>
+</html>
